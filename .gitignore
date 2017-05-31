@@ -1,0 +1,13 @@
+*~
+*#
+.#*
+*.pyc
+__pycache__/
+.python-version
+*.xml
+grants.db
+grants.backup
+distances.db
+key.py
+test.csv
+output.csv
