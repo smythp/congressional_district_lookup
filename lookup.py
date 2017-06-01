@@ -1,6 +1,7 @@
 import csv
 import requests
 from key import api_key
+import sys
 
 
 def generate_request(address, city, county, state, zip):
@@ -29,9 +30,18 @@ def geocode(address, city, county, state, zip):
 # output = geocode(generate_request(address, city, county, state, zip))
 
 
+try:
+    csv_filename = sys.argv[1]
+except IndexError:
+    print("""No CSV file specified. Make sure to run the script like this:
+    
+python lookup.py filename.csv
+    """)    
+    exit()
+
 district_list = []
 
-with open('test.csv', 'r') as in_csv:
+with open(csv_filename, 'r') as in_csv:
     csv_dict = csv.DictReader(in_csv)
     for row in csv_dict:
         locations = geocode(row['address'], row['city'],
@@ -47,7 +57,7 @@ with open('test.csv', 'r') as in_csv:
         district_list.append(str(district[0] + ' ' + str(district[1])))
 
 
-with open('test.csv', 'r') as in_rows:
+with open(csv_filename, 'r') as in_rows:
     with open('output.csv', 'w') as out_file:
         reader = csv.reader(in_rows)
         writer = csv.writer(out_file, lineterminator='\n')
