@@ -17,7 +17,7 @@ Parses a .csv file with addresses and adds a column with congressional districts
     cd congressional_district_lookup
 	
 6\. Get a Google API key [here](https://developers.google.com/maps/documentation/geocoding/get-api-key). Once you have the key, copy it exactly as presented..  
-7\. Open the `key.py` in the folder a text edior and paste your key between the single quotes.  
+7\. Open the `key.py` file in a text editor (like Notepad or TextWrangler) and paste your key between the single quotes.  
 8\. Install the `requests` library using the pip package manager:
 
     pip install requests
@@ -30,5 +30,6 @@ Parses a .csv file with addresses and adds a column with congressional districts
 where `<FILENAME>` is the name of the .csv file.  
 11\. Wait for the script to finish. The output should be in a file called `output.csv`.  
 
+Note that the target CSV must have the following fields on the first line (no caps):
 
-
+	address, city, county, state, zip
