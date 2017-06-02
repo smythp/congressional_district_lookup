@@ -10,7 +10,7 @@ Parses a .csv file with addresses and adds a column with congressional districts
 3\. Open the terminal (or `cmd` on Windows). In OSX, click the magnifying glass in the top right of your desktop (the finder) and type `terminal`. It should be the first item that comes up. On Windows, open the start menu and type `cmd` in the search box.  
 4\. Use Git to clone the repository to your computer. Enter this:
 
-    git clone git@github.com:smythp/congressional_district_lookup.git
+    git clone https://github.com/smythp/congressional_district_lookup.git
 	
 5\. Enter the cloned folder in the command line:
 
